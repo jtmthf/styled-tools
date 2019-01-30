@@ -100,6 +100,12 @@ const Button = styled.button`
     -   [Examples](#examples-6)
 -   [Types](#types)
     -   [Needle](#needle)
+-   [deepPalette](#deeppalette)
+    -   [Parameters](#parameters-7)
+-   [deepProp](#deepprop)
+    -   [Parameters](#parameters-8)
+-   [deepTheme](#deeptheme)
+    -   [Parameters](#parameters-9)
 
 ### prop
 
@@ -308,6 +314,45 @@ All of styled-tools can be used as Needles making it possible to do
 composition between functions. ie `ifProp(theme("dark"), "black", "white")`
 
 Type: ([string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) \| [Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function))
+
+### deepPalette
+
+-   **See: [palette](#palette)**
+
+Returns `props.theme.palette[key || props.palette][tone || props.tone || 0]` or `defaultValue`.
+Supports deep resolving.
+
+#### Parameters
+
+-   `keyOrTone` **([string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) \| [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number))** 
+-   `toneOrDefaultValue` **any** 
+-   `defaultValue` **any** 
+
+### deepProp
+
+-   **See: [prop](#prop)**
+
+Returns the value of `props[path]` or `defaultValue`. Supports deep
+resolving.
+
+#### Parameters
+
+-   `path` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `defaultValue` **any** 
+
+Returns **PropsFn** 
+
+### deepTheme
+
+-   **See: [theme](#theme)**
+
+Same as `deepProp`, except that it returns `props.theme[path]` instead of
+`props[path]`.
+
+#### Parameters
+
+-   `path` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `defaultValue` **any** 
 
 ## License
 
